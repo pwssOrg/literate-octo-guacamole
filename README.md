@@ -1,2 +1,2 @@
 # literate-octo-guacamole
-Libraries of the PWSS Organization 
+The PWSS Organization's library for cryptographic algorithms 
