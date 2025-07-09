@@ -12,7 +12,7 @@ public final class FileHashHandler {
 
     private final DataHash dataHash;
 
-    private final int DIGEST_SIZE = 256;
+    private final int DIGEST_SIZE_BLAKE_2B = 64;
 
     // String Constant
 
@@ -26,8 +26,13 @@ public final class FileHashHandler {
         dataHash = new DataHash();
     }
 
+    /**
+     * Calculates hashes of three different algorithms (SHA2,SHA3, BLAKE_2B) of a file
+     *
+     * @param file
+     * @return A wrapper object containing the file and the three resulting hash strings.
+     */
     public final HashForFilesOutput GetAllHashes(File file) {
-
 
         final String sha256HashString;
         final String sha3HashString;
@@ -37,9 +42,14 @@ public final class FileHashHandler {
         sha3HashString = calculateSha3Hash(file);
         blake2bHashString = calculateBlake2bHash(file);
         return new HashForFilesOutput(file, sha256HashString, sha3HashString, blake2bHashString);
-
     }
 
+    /**
+     * Calculates the SHA256 Hash of a file
+     *
+     * @param file
+     * @return A string containing the hexadecimal representation of the bytes in SHA2 Hash
+     */
     public final String calculateSha256Hash(File file) {
         byte[] sha256Hash;
         try {
@@ -51,6 +61,12 @@ public final class FileHashHandler {
         return ERROR;
     }
 
+    /**
+     * Calculates the SHA3 Hash of a file
+     *
+     * @param file
+     * @return A string containing the hexadecimal representation of the bytes in SHA3 Hash
+     */
     public final String calculateSha3Hash(File file) {
         byte[] sha3Hash;
         try {
@@ -62,10 +78,16 @@ public final class FileHashHandler {
         return ERROR;
     }
 
+    /**
+     * Calculates the Blake2B Hash of a file
+     *
+     * @param file
+     * @return A string containing the hexadecimal representation of the bytes in a Blake2B Hash
+     */
     public final String calculateBlake2bHash(File file) {
         byte[] blake2bHash;
         try {
-            blake2bHash = dataHash.getBLAKE2b(Files.readAllBytes(file.toPath()), DIGEST_SIZE);
+            blake2bHash = dataHash.getBLAKE2b(Files.readAllBytes(file.toPath()), DIGEST_SIZE_BLAKE_2B);
             return BLAKE_2B_PRINT_PREFIX + bytesToHex(blake2bHash);
         } catch (IOException e) {
             e.printStackTrace();
@@ -73,6 +95,14 @@ public final class FileHashHandler {
         return ERROR;
     }
 
+    /**
+     * Convert a byte sequence to its hexadecimal string representation.
+     * This function takes a bytes object and returns a string containing two
+     * hexadecimal digits for each byte in the input, using lowercase letters.
+     *
+     * @param data (bytes): The byte sequence to be converted to hexadecimal.
+     * @return str: A string containing the hexadecimal representation of the bytes.
+     */
     private final String bytesToHex(byte[] bytes) {
         StringBuilder sb = new StringBuilder();
         for (byte b : bytes) {

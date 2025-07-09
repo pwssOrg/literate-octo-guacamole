@@ -7,7 +7,8 @@
     <groupId>lib.pwss.cryptographic_algorithm</groupId>
     <artifactId>cryptographic_algorithm</artifactId>
     <version>1.1</version>
-    <description>A collection of classes that facilitate the transition of cryptographic algorithms.</description>
+    <description>A set of classes designed to simplify the implementation of cryptographic algorithms, focusing on ensuring file
+        integrity through hash functions.</description>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -22,6 +23,34 @@
             <url>https://maven.pkg.github.com/pwssOrg/literate-octo-guacamole</url>
         </repository>
     </distributionManagement>
+
+
+    <developers>
+    <developer>
+        <name>Peter Westin</name>
+        <id>Peter</id>
+        <email>snow_900@outlook.com</email>
+        <roles>
+            <role>Coa supporter</role>
+        </roles>
+        <timezone>Central European Time</timezone>
+    </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>Proprietary License</name>
+            <url>https://github.com/pwssOrg/literate-octo-guacamole/blob/main/LICENSE.md</url>
+            <distribution>repo</distribution>
+            <comments>
+                This software and its source code are proprietary to Peter Westin (pwgit-create) and Stefan Smudja
+                (lilstiffy). All rights
+                reserved. This project may not be copied or used for commercial purposes without the explicit permission
+                of the
+                copyright holders.
+            </comments>
+        </license>
+    </licenses>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk18on -->
