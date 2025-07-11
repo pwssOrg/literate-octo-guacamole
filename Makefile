@@ -22,4 +22,3 @@ help:
         @echo "Available targets:"
         @echo "  make build    - Build the project using Maven"
         @echo "  make clean   - Clean the project using Maven"
-        @echo "  make help    - Display this help message"
