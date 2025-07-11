@@ -9,12 +9,12 @@ all:
 # Build target
 .PHONY: build
 build:
-	mvn --projects $(POM_DIR) --also-make clean install
+	cd $(POM_DIR) && mvn clean install
 
 # Clean target
 .PHONY: clean
 clean:
-	mvn --projects $(POM_DIR) --also-make clean
+	cd $(POM_DIR) && mvn clean
 
 # Help target
 .PHONY: help
