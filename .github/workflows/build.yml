@@ -20,8 +20,5 @@ jobs:
         java-version: '21'
         cache: 'maven'
 
-    - name: checkout repo
-      uses: actions/checkout@main
-
     - name: Install dependencies
       run: make build
