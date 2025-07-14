@@ -9,7 +9,7 @@ on:
  
 jobs:
   security-literate-octo-guacamole:
-    uses: pwssOrg/reusable-workflows/.github/workflows/sca-scan-base.yml@main
+    uses: pwssOrg/reusable-workflows/blob/main/.github/workflows/sca_scan_base.yml@main
     with:
        working-path: pwss/cryptographic_algorithm
        name-of-snyk-step: Check for vulnerabilities in Literate Octo Guacamole
