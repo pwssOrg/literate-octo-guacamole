@@ -1,0 +1,17 @@
+name: SCA Scan - Literate Octo Guacamole
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+ 
+jobs:
+  security-literate-octo-guacamole:
+    uses: pwssOrg/reusable-workflows/.github/workflows/sca-scan-base.yml@main
+    with:
+       working-path: pwss/cryptographic_algorithm
+       name-of-snyk-step: Check for vulnerabilities in Literate Octo Guacamole
+    secrets:
+      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
