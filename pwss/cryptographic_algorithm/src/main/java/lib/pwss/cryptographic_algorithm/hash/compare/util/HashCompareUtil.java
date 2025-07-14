@@ -48,7 +48,7 @@ public final class HashCompareUtil {
      * @param newHash the second hash to compare (must not be null)
      * @return true if the hashes are identical, false otherwise
      */
-    public boolean compareHashesJavaEquals(String oldHash, String newHash) {
+    public static boolean compareHashesJavaEquals(String oldHash, String newHash) {
         if (oldHash == null || newHash == null) {
             return false;
         }
@@ -67,7 +67,7 @@ public final class HashCompareUtil {
      * @param newHash the second hash to compare (must not be null and should have the same length as oldHash)
      * @return true if both comparisons are successful, false otherwise
      */
-    public boolean compareUsingXorAndJavaEquals(String oldHash, String newHash) {
+    public static boolean compareUsingXorAndJavaEquals(String oldHash, String newHash) {
 
         return compareHashesXor(oldHash, newHash) && compareHashesJavaEquals(oldHash, newHash);
 
