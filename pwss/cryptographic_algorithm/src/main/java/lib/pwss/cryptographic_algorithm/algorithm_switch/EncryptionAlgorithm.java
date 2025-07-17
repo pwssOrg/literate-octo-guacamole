@@ -1,39 +1,59 @@
 package lib.pwss.cryptographic_algorithm.algorithm_switch;
 
-public interface EncryptionAlgorithm {
+import java.util.Properties;
+import lib.pwss.cryptographic_algorithm.algorithm_switch.EncryptionAlgorithmChoice;
+
+public final class EncryptionAlgorithm {
 
     /**
-     * Encrypt a given object
-     * @param objectToEncrypt
-     * @return The encrypted object or a String stating that encryption is not allowed (Ex. If Server only decrypts RSA)
-     * @param <T>
+     * Holds the cryptographic algorithm alternatives.
      */
-    public abstract <T> T Encrypt (T objectToEncrypt);
+    private final EncryptionAlgorithmChoice encryptionAlgorithmChoice;
 
     /**
-     * Decrypt a given object
-     * @param objectToDecrypt
-     * @return The encrypted object or a String stating that encryption is not allowed (Ex. If Server only decrypts RSA)
+     * Constructor to initialize the EncryptionAlgorithm with configuration values.
+     */
+    public EncryptionAlgorithm() {
+        // Read properties from config file
+        ReadFromConfigFile reading = new ReadFromConfigFile();
+        Properties config = reading.ReadValuesFromConfigFile();
+
+        // Initialize algorithm choice with values from config
+        this.encryptionAlgorithmChoice = new EncryptionAlgorithmChoice(
+            config.getProperty("1"),
+            config.getProperty("2"),
+            config.getProperty("3"));
+    }
+
+    /**
+     * Gets the cryptographic algorithm alternative to be used.
      *
-     * @param <T>
+     * @return The encryption algorithm choice that should be used by the system.
      */
-    public abstract  <T> T Decrypt(T objectToDecrypt);
+    public final EncryptionAlgorithmChoice getEncryptionAlgorithmChoice() {
+        if (this.encryptionAlgorithmChoice == null) {
+            // Should not happen, but if it does, exit the system!
+            System.exit(1);
+        }
+        return this.encryptionAlgorithmChoice;
+    }
 
     /**
-     * Generate a single symmetric key
-     * @return a symmetric key object
-     * @param <T>
-     * @info An Abstract method for generating a symmetric key. If this is not supported by the cryptographic_algorithm, throw NoSuchMethodError (in an implementing class).
+     * Sets the encryption algorithm to be used in production.
+     *
+     * @return The current encryption algorithm choice.
      */
-    public abstract <T> T GenerateSingleKey();
+    private final EncryptionAlgorithmChoice setEncryptionAlgorithmToUseInProd() {
+        // Returning current configuration
+        return this.encryptionAlgorithmChoice;
+    }
 
     /**
-     * Generate an asymmetric keypair
-     * @return an asymmetric keypair object
-     * @param <T>
-     * @info An Abstract method for generating an asymmetric key pair. If this is not supported by the cryptographic_algorithm, throw NoSuchMethodError (in an implementing class) (in an implementing class).
+     * Returns a description of the library's function.
+     *
+     * @return A string describing the library's purpose.
      */
-    public abstract <T> T GenerateKeyPair();
-
-
+    public final String getLibraryFunctionDescription() {
+        return "A library that includes helper classes to simplify switching cryptographic algorithms.";
+    }
 }
