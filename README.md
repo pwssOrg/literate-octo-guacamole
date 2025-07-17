@@ -29,7 +29,7 @@ PWSS representatives if you're interested.
 <dependency>
   <groupId>lib.pwss.cryptographic_algorithm</groupId>
   <artifactId>cryptographic_algorithm</artifactId>
-  <version>1.3</version>
+  <version>1.4</version>
 </dependency>
 ```
 
@@ -85,32 +85,108 @@ public class HashCompareExample {
 
 ## Data Structures
 
-The library offers various data structures to facilitate the implementation of algorithm-switching capabilities
+PWSS Security various data structures to facilitate the implementation of algorithm-switching capabilities
 within cryptographic applications. These features help protect against future quantum computing threats by
 allowing easy transitions between hash algorithms.
 
 ### Algorithm Switching
 
-When implementing an encryption algorithm like RSA in a project where you want to enable algorithm switching,
-follow these steps:
 
-1. **Extend the AbstractEncryptionAlgorithm Class**: The RSA class (with its business logic) will extend the
-`AbstractEncryptionAlgorithm` class.
+Replace `<groupId>`, `<artifactId>`, and `<version>` with the actual values for your GitHub package repository.
 
-2. **Wrap it in Conditional Statements**: Use conditional statements (e.g., if-else) to determine which encryption
-algorithm to use based on specific criteria or configurations (See image).
+### Enable Algorithm Switching
 
-<img width="1026" height="699" alt="image" src="https://github.com/user-attachments/assets/c5a6a8d5-9b9a-4f57-893a-77868e63d66b" />
+To enable algorithm switching, you need to call `initAlgorithmSwitchingFunction` in an implementing class. Here’s
+how you can do it:
 
+```java
+import lib.pwss.cryptographic_algorithm.algorithm_switch.AlgorithmSwitchingInitializer;
+import lib.pwss.cryptographic_algorithm.algorithm_switch.EncryptionAlgorithm;
 
-The benefit of this setup is that you can change cryptographic algorithms by simply modifying a text value in a
-`.properties` file.
+public class MainApp {
+    public static void main(String[] args) {
+        AlgorithmSwitchingInitializer initializer = new AlgorithmSwitchingInitializer();
+        initializer.initAlgorithmSwitchingFunction(); // This only needs to be done once : ) 
 
-### Important Note :heavy_exclamation_mark:
+           }
+}
+```
 
-Due to previous requirements from past projects, the algorithm switching part of this library was redacted and
-only serves as a guideline for algorithm switching. When version 1.4 is released, the policy file will be
-reinstated, and the example above will work with a policy file again.
+### Implement Mock Algorithms in the MainApp Class
+
+Here's a complete example including mock implementations for two algorithms:
+
+```java
+import lib.pwss.cryptographic_algorithm.algorithm_switch.AlgorithmSwitchingInitializer;
+import lib.pwss.cryptographic_algorithm.algorithm_switch.EncryptionAlgorithm;
+
+public class MainApp {
+    public static void main(String[] args) {
+        AlgorithmSwitchingInitializer initializer = new AlgorithmSwitchingInitializer();
+        initializer.initAlgorithmSwitchingFunction();
+
+        // Example of getting algorithm2 using EncryptionAlgorithmChoice
+        EncryptionAlgorithm encryptionAlgorithm = new EncryptionAlgorithm();
+        String algorithm2 = encryptionAlgorithm.getEncryptionAlgorithmChoice().ALGORITHM_2;
+        System.out.println("Selected Algorithm 2: " + algorithm2);
+
+        // Implement your own choice logic based on the retrieved algorithms
+        chooseAlgorithm(algorithm2);
+    }
+
+    private static void chooseAlgorithm(String algorithm) {
+        switch (algorithm.toUpperCase()) {
+            case "RSA":
+                System.out.println("Using RSA algorithm.");
+                performRSAEncryption();
+                break;
+            case "KYBER":
+                System.out.println("Using Kyber algorithm.");
+                performKyberEncryption();
+                break;
+            default:
+                System.err.println("Unknown algorithm: " + algorithm);
+                break;
+        }
+    }
+
+    private static void performRSAEncryption() {
+        // Mock implementation of RSA encryption
+        System.out.println("RSA Encryption is being performed...");
+    }
+
+    private static void performKyberEncryption() {
+        // Mock implementation of Kyber encryption
+        System.out.println("Kyber Encryption is being performed...");
+    }
+}
+```
+### Summary
+
+1. **Add the dependency to your Maven project** by updating `pom.xml`.
+2. **Initialize algorithm switching** with `initAlgorithmSwitchingFunction()`.
+3. **Implement logic** to choose and use the selected algorithm.
+
+### Guide for Changing Algorithm Name in switch_algorithm.properties
+You can change the algorithm name by editing the `switch_algorithm.properties` file located in the folder of your project that has the pom file. This file maps numeric values
+to specific algorithms:
+
+```
+# Thu Jul 17 06:14:44 CEST 2025
+1=RSA
+2=Kyber
+3=Blake_2B
+```
+
+To change an algorithm, simply update the value associated with the corresponding key. For example, if you want to
+change algorithm 2 from "Kyber" to "NewAlgorithm":
+
+```
+# Thu Jul 17 06:14:44 CEST 2025
+1=RSA
+2=NewAlgorithm
+3=Blake_2B
+```
 
 
 
