@@ -24,7 +24,7 @@ To use the `cryptographic_algorithm` library, you need to include it as a depend
 it on the private GitHub package repository of PWSS. A GitHub packages token is required to access it. Contact
 PWSS representatives if you're interested.
 
-### Maven (PWSS Private Github Package)
+### Maven 
 ```xml
 <dependency>
   <groupId>lib.pwss.cryptographic_algorithm</groupId>
@@ -32,7 +32,7 @@ PWSS representatives if you're interested.
   <version>1.4</version>
 </dependency>
 ```
-
+<sub>(PWSS Private Github Package)</sub>
 ## Usage
 
 Here's a basic example to get you started with using the `pwss.cryptographic_algorithm` library for calculating
@@ -85,14 +85,16 @@ public class HashCompareExample {
 
 ## Data Structures
 
-PWSS Security various data structures to facilitate the implementation of algorithm-switching capabilities
-within cryptographic applications. These features help protect against future quantum computing threats by
-allowing easy transitions between hash algorithms.
+
+In addition to its capabilities in extracting hashes, this library provides data structures that facilitate easy
+switching between cryptographic algorithms and hash functions. 
+
 
 ### Algorithm Switching
 
+The **Literate Octo Guacamoles** contains various data structures to facilitate the implementation of algorithm-switching capabilities
+within cryptographic applications. These features help protect against future quantum computing threats by allowing easy transitions between hash algorithms.
 
-Replace `<groupId>`, `<artifactId>`, and `<version>` with the actual values for your GitHub package repository.
 
 ### Enable Algorithm Switching
 
@@ -161,7 +163,7 @@ public class MainApp {
     }
 }
 ```
-### Summary
+### Key Points
 
 1. **Add the dependency to your Maven project** by updating `pom.xml`.
 2. **Initialize algorithm switching** with `initAlgorithmSwitchingFunction()`.
