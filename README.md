@@ -83,18 +83,17 @@ public class HashCompareExample {
 }
 ```
 
-## Data Structures
+# Data Structures
 
 
 In addition to its capabilities in extracting hashes, this library provides data structures that facilitate easy
 switching between cryptographic algorithms and hash functions. 
 
 
-### Algorithm Switching
+## Algorithm Switching
 
-The **Literate Octo Guacamoles** contains various data structures to facilitate the implementation of algorithm-switching capabilities
-within cryptographic applications. These features help protect against future quantum computing threats by allowing easy transitions between hash algorithms.
-
+This feature protects against future quantum computing threats by enabling seamless transitions between different
+hash or cryptographic algorithms.
 
 ### Enable Algorithm Switching
 
