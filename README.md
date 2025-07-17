@@ -90,10 +90,8 @@ In addition to its capabilities in extracting hashes, this library provides data
 switching between cryptographic algorithms and hash functions. 
 
 
-## Algorithm Switching
-
-This feature protects against future quantum computing threats by enabling seamless transitions between different
-hash or cryptographic algorithms.
+## <i> Algorithm Switching </i>
+These features help protect against future quantum computing threats by allowing easy transitions between hash algorithms.
 
 ### Enable Algorithm Switching
 
