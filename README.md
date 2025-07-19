@@ -117,38 +117,40 @@ Here's a complete example including mock implementations for two algorithms:
 
 ```java
 import lib.pwss.cryptographic_algorithm.algorithm_switch.AlgorithmSwitchingInitializer;
+import lib.pwss.cryptographic_algorithm.algorithm_switch.ChooseAlgorithm;
 import lib.pwss.cryptographic_algorithm.algorithm_switch.EncryptionAlgorithm;
-import lib.pwss.cryptographic_algorithm.algorithm_switch.EncryptionAlgorithmChoices;
+
 
 public class MainApp implements ChooseAlgorithm {
 
-    public static void main(String[] args) {
+    private void Test() {
         // Initialize the algorithm switching functionality
         AlgorithmSwitchingInitializer initializer = new AlgorithmSwitchingInitializer();
-        
-	//Only needs to be ran one time. This method creates the config file next to your pom.xml
-	initializer.initAlgorithmSwitchingFunction(); 
 
-	//Invokes the algorithm specified in the config file.
-        chooseAlgorithmImplementation(EncryptionAlgorithm encryptionAlgorithm) 
+        // Only needs to be ran one time. This method creates the config file next to your pom.xml
+        initializer.initAlgorithmSwitchingFunction();
+
+        // Only one instance of EncryptionAlgorithm allowed
+        EncryptionAlgorithm encryptionAlgorithm = new EncryptionAlgorithm();
+
+        // Invokes the algorithm specified in the config file.
+        chooseAlgorithmImplementation(encryptionAlgorithm);
     }
 
     @Override
     public void implementAlgorithm1() {
-        System.out.println("Using RSA algorithm.");
         performRSAEncryption();
     }
 
     @Override
     public void implementAlgorithm2() {
-        System.out.println("Using Kyber algorithm.");
         performKyberEncryption();
     }
 
     @Override
     public void implementAlgorithm3() {
-        System.out.println("Not yet implemented");
-        System.exit(1);
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'implementAlgorithm3'");
     }
 
     private final void performRSAEncryption() {
@@ -159,6 +161,11 @@ public class MainApp implements ChooseAlgorithm {
     private final void performKyberEncryption() {
         // Mock implementation of Kyber encryption
         System.out.println("Kyber Encryption is being performed...");
+    }
+
+    public static void main(String[] args) {
+        MainApp main = new MainApp();
+        main.Test();
     }
 }
 ```
