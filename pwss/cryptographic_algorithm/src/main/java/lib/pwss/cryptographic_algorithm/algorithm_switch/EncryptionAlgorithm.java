@@ -24,8 +24,8 @@ public final class EncryptionAlgorithm {
      * Constructor to initialize the EncryptionAlgorithm with configuration values.
      */
     public EncryptionAlgorithm() {
-
-        if (instanceCount > 0) {
+        instanceCount++;
+        if (instanceCount > 1) {
             encryptionAlgorithmChoices = null;
             SELECTED_ALGORITHM_FOR_PRODUCTION = 0;
             System.exit(2);
