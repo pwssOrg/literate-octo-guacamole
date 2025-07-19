@@ -30,6 +30,7 @@ public final class AlgorithmSwitchingInitializer {
                 properties.setProperty("1", "RSA");
                 properties.setProperty("2", "Kyber");
                 properties.setProperty("3", "Blake_2B");
+                properties.setProperty("USE_FOR_PROD","1");
 
                 // Save properties to file with no header comment
                 properties.store(fos, null);

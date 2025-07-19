@@ -6,7 +6,7 @@
 
     <groupId>lib.pwss.cryptographic_algorithm</groupId>
     <artifactId>cryptographic_algorithm</artifactId>
-    <version>1.4</version>
+    <version>1.5</version>
     <description>A set of classes designed to simplify the implementation of cryptographic algorithms, focusing on ensuring file
         integrity through hash functions.</description>
 
