@@ -70,15 +70,17 @@ import lib.pwss.cryptographic_algorithm.hash.compare.util.HashCompareUtil;
 
 public class HashCompareExample {
     public static void main(String[] args) throws Exception {
-        final String hash1 = "somehash"
-        final String hash2 = "somehash"
+        final String hash1 = "somehash";
+        final String hash2 = "somehash";
 
         // Compare hashes using XOR
         final boolean result = HashCompareUtil.compareHashesXor(hash1, hash2);
 
         // Compare hashes using equals
-        final boolean result = HashCompareUtil.compareHashesJavaEquals(hash1, hash2);
-       
+        final boolean result2 = HashCompareUtil.compareHashesJavaEquals(hash1, hash2);
+
+        System.out.println(result);
+        System.out.println(result2);
     }
 }
 ```
