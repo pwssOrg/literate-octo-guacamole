@@ -29,7 +29,7 @@ PWSS representatives if you're interested.
 <dependency>
   <groupId>lib.pwss.cryptographic_algorithm</groupId>
   <artifactId>cryptographic_algorithm</artifactId>
-  <version>1.5</version>
+  <version>1.5.1</version>
 </dependency>
 ```
 <sub>(PWSS Private Github Package)</sub>
