@@ -29,7 +29,7 @@ PWSS representatives if you're interested.
 <dependency>
   <groupId>lib.pwss.cryptographic_algorithm</groupId>
   <artifactId>cryptographic_algorithm</artifactId>
-  <version>1.4</version>
+  <version>1.5</version>
 </dependency>
 ```
 <sub>(PWSS Private Github Package)</sub>
@@ -118,43 +118,45 @@ Here's a complete example including mock implementations for two algorithms:
 ```java
 import lib.pwss.cryptographic_algorithm.algorithm_switch.AlgorithmSwitchingInitializer;
 import lib.pwss.cryptographic_algorithm.algorithm_switch.EncryptionAlgorithm;
+import lib.pwss.cryptographic_algorithm.algorithm_switch.EncryptionAlgorithmChoices;
 
-public class MainApp {
+public class MainApp implements ChooseAlgorithm {
+
     public static void main(String[] args) {
+        // Initialize the algorithm switching functionality
         AlgorithmSwitchingInitializer initializer = new AlgorithmSwitchingInitializer();
-        initializer.initAlgorithmSwitchingFunction();
+        
+	//Only needs to be ran one time. This method creates the config file next to your pom.xml
+	initializer.initAlgorithmSwitchingFunction(); 
 
-        // Example of getting algorithm2 using EncryptionAlgorithmChoice
-        EncryptionAlgorithm encryptionAlgorithm = new EncryptionAlgorithm();
-        String algorithm2 = encryptionAlgorithm.getEncryptionAlgorithmChoice().ALGORITHM_2;
-        System.out.println("Selected Algorithm 2: " + algorithm2);
-
-        // Implement your own choice logic based on the retrieved algorithms
-        chooseAlgorithm(algorithm2);
+	//Invokes the algorithm specified in the config file.
+        chooseAlgorithmImplementation(EncryptionAlgorithm encryptionAlgorithm) 
     }
 
-    private static void chooseAlgorithm(String algorithm) {
-        switch (algorithm.toUpperCase()) {
-            case "RSA":
-                System.out.println("Using RSA algorithm.");
-                performRSAEncryption();
-                break;
-            case "KYBER":
-                System.out.println("Using Kyber algorithm.");
-                performKyberEncryption();
-                break;
-            default:
-                System.err.println("Unknown algorithm: " + algorithm);
-                break;
-        }
+    @Override
+    public void implementAlgorithm1() {
+        System.out.println("Using RSA algorithm.");
+        performRSAEncryption();
     }
 
-    private static void performRSAEncryption() {
+    @Override
+    public void implementAlgorithm2() {
+        System.out.println("Using Kyber algorithm.");
+        performKyberEncryption();
+    }
+
+    @Override
+    public void implementAlgorithm3() {
+        System.out.println("Not yet implemented");
+        System.exit(1);
+    }
+
+    private final void performRSAEncryption() {
         // Mock implementation of RSA encryption
         System.out.println("RSA Encryption is being performed...");
     }
 
-    private static void performKyberEncryption() {
+    private final void performKyberEncryption() {
         // Mock implementation of Kyber encryption
         System.out.println("Kyber Encryption is being performed...");
     }
@@ -171,20 +173,31 @@ You can change the algorithm name by editing the `switch_algorithm.properties` f
 to specific algorithms:
 
 ```
-# Thu Jul 17 06:14:44 CEST 2025
+#Sat Jul 19 06:11:03 CEST 2025
 1=RSA
 2=Kyber
 3=Blake_2B
+USE_FOR_PROD=1
 ```
 
 To change an algorithm, simply update the value associated with the corresponding key. For example, if you want to
 change algorithm 2 from "Kyber" to "NewAlgorithm":
 
 ```
-# Thu Jul 17 06:14:44 CEST 2025
+#Sat Jul 19 06:11:03 CEST 2025
 1=RSA
 2=NewAlgorithm
 3=Blake_2B
+USE_FOR_PROD=1
+```
+To change the selected algorithm to "NewAlgorithm", update the value of "USE_FOR_PROD" to "2":
+
+```
+#Sat Jul 19 06:11:03 CEST 2025
+1=RSA
+2=NewAlgorithm
+3=Blake_2B
+USE_FOR_PROD=2
 ```
 
 
