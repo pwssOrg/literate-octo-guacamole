@@ -6,7 +6,7 @@ import org.bouncycastle.crypto.digests.SHA3Digest;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
- public final class DataHash {
+  final class DataHash {
 
     protected DataHash() {
     }
