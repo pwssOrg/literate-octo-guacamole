@@ -38,6 +38,33 @@ public final class HashCompareUtil {
         return true;
     }
 
+           /**
+     * Compares two hashes using an XOR operation on each corresponding byte.
+     * This method checks if the provided old hash and new hash are identical by
+     * performing a bitwise XOR comparison on each corresponding position. If any
+     * position differs, it returns false; otherwise, it returns true.
+     *
+     * <p>This is particularly useful for simple equality checks of fixed-length
+     * string representations such as checksums or cryptographic hashes where an
+     * exact match is required.</p>
+     *
+     * @param oldHash the first hash to compare (must not be null)
+     * @param newHash the second hash to compare (must not be null and should have the same length as oldHash)
+     * @return true if the hashes are identical, false otherwise
+     */
+        public static boolean compareHashesXor(byte[] oldHash, byte[] newHash) {
+        if (oldHash == null || newHash == null || oldHash.length != newHash.length) {
+            return false;
+        }
+        for (int i = 0; i < oldHash.length; i++) {
+            // XOR operation on each byte
+            if ((oldHash[i] ^ newHash[i]) != 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     /**
      * Compares two hashes using Java's built-in {@code String.equals()} method.
      * This method checks if the provided old hash and new hash are identical by

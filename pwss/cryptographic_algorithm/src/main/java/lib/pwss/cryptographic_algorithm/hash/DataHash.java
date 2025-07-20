@@ -1,4 +1,4 @@
-package lib.pwss.cryptographic_algorithm.hash.algorithm;
+package lib.pwss.cryptographic_algorithm.hash;
 
 import org.bouncycastle.crypto.Digest;
 import org.bouncycastle.crypto.digests.SHA3Digest;
@@ -8,7 +8,7 @@ import java.security.NoSuchAlgorithmException;
 
  public final class DataHash {
 
-    public DataHash() {
+    protected DataHash() {
     }
 
      /**
@@ -17,7 +17,7 @@ import java.security.NoSuchAlgorithmException;
       * @return bytes
       * @throws NoSuchAlgorithmException
       */
-    public final byte[] getSHA256(byte[] data) throws NoSuchAlgorithmException {
+    protected final byte[] getSHA256(byte[] data) throws NoSuchAlgorithmException {
         MessageDigest md = null;
         try {
             md = MessageDigest.getInstance("SHA-256");
@@ -31,7 +31,7 @@ import java.security.NoSuchAlgorithmException;
       * @param data (bytes)
       * @return bytes
       */
-    public final byte[] getSHA3_256(byte[] data) {
+    protected final byte[] getSHA3_256(byte[] data) {
         Digest digest = new SHA3Digest(256);
         byte[] hash = new byte[digest.getDigestSize()];
         digest.update(data, 0, data.length);
@@ -45,7 +45,7 @@ import java.security.NoSuchAlgorithmException;
       * @param digestSize BLAKE2b digest bit length must be a multiple of 8 and not greater than 512
       * @return bytes
       */
-    public final byte[] getBLAKE2b(byte[] data, int digestSize) {
+    protected final byte[] getBLAKE2b(byte[] data, int digestSize) {
         Digest digest = new org.bouncycastle.crypto.digests.Blake2bDigest(digestSize * 8); // Bits
         byte[] hash = new byte[digest.getDigestSize()];
         digest.update(data, 0, data.length);
