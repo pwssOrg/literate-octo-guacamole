@@ -35,11 +35,11 @@ PWSS representatives if you're interested.
 <sub>(PWSS Private Github Package)</sub>
 ## Usage
 
-Here's a basic example to get you started with using the `pwss.cryptographic_algorithm` library for calculating
+Here's a basic example to get you started with using the `algorithm-hash-extraction` library for calculating
 hash strings:
 
 ```java
-import lib.pwss.algorithm_hash_extraction.hash.FileHashHandler;
+import lib.pwss.hash.FileHashHandler;
 
 public class Example {
     public static void main(String[] args) throws Exception {
@@ -66,7 +66,7 @@ public class Example {
 ```
 ### HashComparison
 ```java
-import lib.pwss.algorithm_hash_extraction.hash.compare.util.HashCompareUtil;
+import lib.pwss.hash.compare.util.HashCompareUtil;
 
 public class HashCompareExample {
     public static void main(String[] args) throws Exception {
@@ -101,8 +101,8 @@ To enable algorithm switching, you need to call `initAlgorithmSwitchingFunction`
 how you can do it:
 
 ```java
-import lib.pwss.algorithm_hash_extraction.algorithm_switch.AlgorithmSwitchingInitializer;
-import lib.pwss.algorithm_hash_extraction.algorithm_switch.EncryptionAlgorithm;
+import lib.pwss.algorithm_switch.AlgorithmSwitchingInitializer;
+import lib.pwss.algorithm_switch.EncryptionAlgorithm;
 
 public class MainApp {
     public static void main(String[] args) {
@@ -118,9 +118,9 @@ public class MainApp {
 Here's a complete example including mock implementations for two algorithms:
 
 ```java
-import lib.pwss.algorithm_hash_extraction.algorithm_switch.AlgorithmSwitchingInitializer;
-import lib.pwss.algorithm_hash_extraction.algorithm_switch.ChooseAlgorithm;
-import lib.pwss.algorithm_hash_extraction.algorithm_switch.EncryptionAlgorithm;
+import lib.pwss.algorithm_switch.AlgorithmSwitchingInitializer;
+import lib.pwss.algorithm_switch.ChooseAlgorithm;
+import lib.pwss.algorithm_switch.EncryptionAlgorithm;
 
 
 public class MainApp implements ChooseAlgorithm {
