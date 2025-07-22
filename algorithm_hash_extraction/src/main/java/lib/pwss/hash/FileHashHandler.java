@@ -1,11 +1,11 @@
-package lib.pwss.cryptographic_algorithm.hash;
-
-import lib.pwss.cryptographic_algorithm.hash.model.HashForFilesOutput;
+package lib.pwss.hash;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.security.NoSuchAlgorithmException;
+
+import lib.pwss.hash.model.HashForFilesOutput;
 
 public final class FileHashHandler {
 

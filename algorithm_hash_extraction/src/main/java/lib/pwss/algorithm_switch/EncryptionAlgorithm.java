@@ -1,8 +1,8 @@
-package lib.pwss.cryptographic_algorithm.algorithm_switch;
+package lib.pwss.algorithm_switch;
 
 import java.util.Properties;
 
-import static lib.pwss.cryptographic_algorithm.algorithm_switch.ConfigConstant.*;
+import static lib.pwss.algorithm_switch.ConfigConstant.*;
 
 public final class EncryptionAlgorithm {
 

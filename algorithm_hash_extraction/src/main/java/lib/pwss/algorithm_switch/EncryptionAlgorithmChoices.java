@@ -1,4 +1,4 @@
-package lib.pwss.cryptographic_algorithm.algorithm_switch;
+package lib.pwss.algorithm_switch;
 
 public final class EncryptionAlgorithmChoices {
 
