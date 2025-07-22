@@ -11,7 +11,7 @@ jobs:
   security-literate-octo-guacamole:
     uses: pwssOrg/reusable-workflows/.github/workflows/sca_scan_base.yml@main
     with:
-       working-path: pwss/cryptographic_algorithm
+       working-path: algorithm_hash_extraction
        name-of-snyk-step: Check for vulnerabilities in Literate Octo Guacamole
     secrets:
       SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}

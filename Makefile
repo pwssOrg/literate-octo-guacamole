@@ -1,5 +1,5 @@
 # Define the pom directory path
-POM_DIR := pwss/cryptographic_algorithm
+POM_DIR := algorithm_hash_extraction
 
 # Default target - nothing to do here, but it helps users
 .PHONY: all

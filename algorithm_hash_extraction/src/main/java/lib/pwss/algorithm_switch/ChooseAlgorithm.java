@@ -1,4 +1,4 @@
-package lib.pwss.cryptographic_algorithm.algorithm_switch;
+package lib.pwss.algorithm_switch;
 /**
  * Interface designed to aid in the selection and implementation of different encryption algorithms.
  *

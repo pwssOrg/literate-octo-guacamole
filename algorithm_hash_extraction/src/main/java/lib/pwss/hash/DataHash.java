@@ -1,4 +1,4 @@
-package lib.pwss.cryptographic_algorithm.hash;
+package lib.pwss.hash;
 
 import org.bouncycastle.crypto.Digest;
 import org.bouncycastle.crypto.digests.SHA3Digest;

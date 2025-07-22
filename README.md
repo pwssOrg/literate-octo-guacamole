@@ -3,7 +3,7 @@
 [![Makefile CI](https://github.com/pwssOrg/literate-octo-guacamole/actions/workflows/build.yml/badge.svg)](https://github.com/pwssOrg/literate-octo-guacamole/actions/workflows/build.yml)
 [![SCA Scan - Literate Octo Guacamole](https://github.com/pwssOrg/literate-octo-guacamole/actions/workflows/snyk-scan.yml/badge.svg)](https://github.com/pwssOrg/literate-octo-guacamole/actions/workflows/snyk-scan.yml)
 
-The **Literate Octo Guacamole** (cryptographic_algorithm) library is a part of the PWSS Library family. This Java-based library focuses on
+The **Literate Octo Guacamole** (algorithm-hash-extraction) library is a part of the PWSS Library family. This Java-based library focuses on
 extracting cryptographic hash values from `File` objects using various algorithms, providing essential tools for
 future-proofing cryptographic applications against quantum computing threats.
 
@@ -20,16 +20,16 @@ future-proofing cryptographic applications against quantum computing threats.
 
 ## Installation
 
-To use the `cryptographic_algorithm` library, you need to include it as a dependency in your project. You can find
+To use the `algorithm-hash-extraction` library, you need to include it as a dependency in your project. You can find
 it on the private GitHub package repository of PWSS. A GitHub packages token is required to access it. Contact
 PWSS representatives if you're interested.
 
 ### Maven 
 ```xml
 <dependency>
-  <groupId>lib.pwss.cryptographic_algorithm</groupId>
-  <artifactId>cryptographic_algorithm</artifactId>
-  <version>1.5.2</version>
+  <groupId>lib.pwss</groupId>
+  <artifactId>algorithm-hash-extraction</artifactId>
+  <version>1.0</version>
 </dependency>
 ```
 <sub>(PWSS Private Github Package)</sub>
@@ -39,7 +39,7 @@ Here's a basic example to get you started with using the `pwss.cryptographic_alg
 hash strings:
 
 ```java
-import lib.pwss.cryptographic_algorithm.hash.FileHashHandler;
+import lib.pwss.algorithm_hash_extraction.hash.FileHashHandler;
 
 public class Example {
     public static void main(String[] args) throws Exception {
@@ -66,7 +66,7 @@ public class Example {
 ```
 ### HashComparison
 ```java
-import lib.pwss.cryptographic_algorithm.hash.compare.util.HashCompareUtil;
+import lib.pwss.algorithm_hash_extraction.hash.compare.util.HashCompareUtil;
 
 public class HashCompareExample {
     public static void main(String[] args) throws Exception {
@@ -101,8 +101,8 @@ To enable algorithm switching, you need to call `initAlgorithmSwitchingFunction`
 how you can do it:
 
 ```java
-import lib.pwss.cryptographic_algorithm.algorithm_switch.AlgorithmSwitchingInitializer;
-import lib.pwss.cryptographic_algorithm.algorithm_switch.EncryptionAlgorithm;
+import lib.pwss.algorithm_hash_extraction.algorithm_switch.AlgorithmSwitchingInitializer;
+import lib.pwss.algorithm_hash_extraction.algorithm_switch.EncryptionAlgorithm;
 
 public class MainApp {
     public static void main(String[] args) {
@@ -118,9 +118,9 @@ public class MainApp {
 Here's a complete example including mock implementations for two algorithms:
 
 ```java
-import lib.pwss.cryptographic_algorithm.algorithm_switch.AlgorithmSwitchingInitializer;
-import lib.pwss.cryptographic_algorithm.algorithm_switch.ChooseAlgorithm;
-import lib.pwss.cryptographic_algorithm.algorithm_switch.EncryptionAlgorithm;
+import lib.pwss.algorithm_hash_extraction.algorithm_switch.AlgorithmSwitchingInitializer;
+import lib.pwss.algorithm_hash_extraction.algorithm_switch.ChooseAlgorithm;
+import lib.pwss.algorithm_hash_extraction.algorithm_switch.EncryptionAlgorithm;
 
 
 public class MainApp implements ChooseAlgorithm {

@@ -1,4 +1,4 @@
-package lib.pwss.cryptographic_algorithm.hash.model;
+package lib.pwss.hash.model;
 
 import java.io.File;
 

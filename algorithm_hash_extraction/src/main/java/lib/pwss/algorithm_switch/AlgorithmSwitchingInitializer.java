@@ -1,4 +1,4 @@
-package lib.pwss.cryptographic_algorithm.algorithm_switch;
+package lib.pwss.algorithm_switch;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package lib.pwss.cryptographic_algorithm.hash.compare.util;
+package lib.pwss.hash.compare.util;
 
 /**
  * Utility class for comparing hashes.

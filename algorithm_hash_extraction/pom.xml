@@ -4,11 +4,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>lib.pwss.cryptographic_algorithm</groupId>
-    <artifactId>cryptographic_algorithm</artifactId>
-    <version>1.5.2</version>
-    <description>A set of classes designed to simplify the implementation of cryptographic algorithms, focusing on ensuring file
-        integrity through hash functions.</description>
+    <groupId>lib.pwss</groupId>
+    <artifactId>algorithm-hash-extraction</artifactId>
+    <version>1.0</version>
+    <description>The 'algorithm-hash-extraction' library provides two core functionalities:
+1. Hash Extraction: It extracts hashes from files using three different cryptographic algorithms - SHA-256, SHA3,
+and Blake_2b.
+2. Algorithm Switching: It includes a feature to switch between these algorithms via a configuration file,
+allowing users to modify the algorithm used through an easy-to-edit text policy file.
+
+This library is ideal for developers needing robust hash extraction capabilities with flexibility in choosing
+cryptographic algorithms based on configurable policies.</description>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
