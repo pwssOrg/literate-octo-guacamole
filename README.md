@@ -209,6 +209,17 @@ To change the selected algorithm to "NewAlgorithm", update the value of "USE_FOR
 USE_FOR_PROD=2
 ```
 
+### API Documentation
+
+For detailed information about our classes, methods, and their usage, please visit the Javadoc:
+
+[Link to API Docs](https://pwssorg.github.io/literate-octo-guacamole-JavaDocs/)
+
+The Javadocs provide comprehensive documentation for all public APIs in this project, including:
+- Class descriptions
+- Method details with parameters and return types
+- Example usages when available
+
 ## Discussion Forum
 
 Please visit our discussion forum for project-related documentation and discussions: [Project Discussion
