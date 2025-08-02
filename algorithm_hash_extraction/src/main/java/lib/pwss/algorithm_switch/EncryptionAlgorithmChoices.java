@@ -1,5 +1,10 @@
 package lib.pwss.algorithm_switch;
 
+/**
+ * A class representing a set of choices for encryption algorithms.
+ * This class holds three cryptographic algorithms and provides methods to
+ * retrieve them.
+ */
 public final class EncryptionAlgorithmChoices {
 
     /**

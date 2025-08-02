@@ -7,13 +7,22 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Properties;
 
+/**
+ * This class is responsible for initializing the algorithm switching function.
+ * It writes configuration values to a properties file if it does not already
+ * exist.
+ */
 public final class AlgorithmSwitchingInitializer {
 
     /**
-     * Initializes the algorithm switching function by writing configuration values to a properties file.
+     * Initializes the algorithm switching function by writing default configuration
+     * values to a properties file. If the properties file already exists, this
+     * method
+     * will return without making any changes.
      */
     public final void initAlgorithmSwitchingFunction() {
-        // Define the path for the properties file in the root folder of the Maven project
+        // Define the path for the properties file in the root folder of the Maven
+        // project
         Path currentDir = Paths.get(System.getProperty("user.dir"));
         Path propertiesFilePath = currentDir.resolve(ConfigConstant.CONFIG_FILE_NAME);
 
@@ -30,7 +39,7 @@ public final class AlgorithmSwitchingInitializer {
                 properties.setProperty("1", "RSA");
                 properties.setProperty("2", "Kyber");
                 properties.setProperty("3", "Blake_2B");
-                properties.setProperty("USE_FOR_PROD","1");
+                properties.setProperty("USE_FOR_PROD", "1");
 
                 // Save properties to file with no header comment
                 properties.store(fos, null);
