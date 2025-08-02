@@ -6,7 +6,11 @@ package lib.pwss.hash.compare.util;
 public final class HashCompareUtil {
 
 
-    // Private constructor to prevent instantiation
+    /**
+     * Private constructor to prevent instantiation of this utility class.
+     *
+     * @throws UnsupportedOperationException if someone tries to instantiate the utility class
+     */
     private HashCompareUtil() {
         throw new UnsupportedOperationException("Utility class. Do not instantiate.");
     }

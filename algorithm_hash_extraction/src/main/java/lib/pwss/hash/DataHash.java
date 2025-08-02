@@ -5,9 +5,15 @@ import org.bouncycastle.crypto.digests.SHA3Digest;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-
+/**
+ * The DataHash class provides methods for calculating hash values using various hashing algorithms.
+ * This includes SHA-256, SHA-3 (256), and BLAKE2b. It is used internally by other classes to perform
+ * the actual hashing operations on data byte arrays.
+ */
   final class DataHash {
-
+/**
+     * Protected constructor to prevent instantiation of this class outside the package.
+     */
     protected DataHash() {
     }
 

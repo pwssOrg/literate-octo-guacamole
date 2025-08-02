@@ -7,6 +7,11 @@ import java.security.NoSuchAlgorithmException;
 
 import lib.pwss.hash.model.HashForFilesOutput;
 
+/**
+ * The FileHashHandler class provides methods for calculating hash values of a file using various hashing
+algorithms.
+ * This includes SHA-256, SHA-3 (256), and BLAKE2b. It returns the calculated hash values in a structured format.
+ */
 public final class FileHashHandler {
 
     private final DataHash dataHash;
@@ -21,6 +26,9 @@ public final class FileHashHandler {
     private final String SHA3_PRINT_PREFIX = "SHA-3 (256): ";
     private final String BLAKE_2B_PRINT_PREFIX = "BLAKE2b: ";
 
+    /**
+     * Public Constructor
+     */
     public FileHashHandler() {
         dataHash = new DataHash();
     }
@@ -28,7 +36,7 @@ public final class FileHashHandler {
     /**
      * Calculates hashes of three different algorithms (SHA2,SHA3, BLAKE_2B) of a file
      *
-     * @param file
+     * @param file to extract hash from
      * @return A wrapper object containing the file and the three resulting hash strings.
      */
     public final HashForFilesOutput GetAllHashes(File file) {
@@ -46,7 +54,7 @@ public final class FileHashHandler {
     /**
      * Calculates the SHA256 Hash of a file
      *
-     * @param file
+     * @param file to extract hash from
      * @return A string containing the hexadecimal representation of the bytes in SHA2 Hash
      */
     public final String calculateSha256Hash(File file) {
@@ -63,7 +71,7 @@ public final class FileHashHandler {
     /**
      * Calculates the SHA3 Hash of a file
      *
-     * @param file
+     * @param file to extract hash from
      * @return A string containing the hexadecimal representation of the bytes in SHA3 Hash
      */
     public final String calculateSha3Hash(File file) {
@@ -80,7 +88,7 @@ public final class FileHashHandler {
     /**
      * Calculates the Blake2B Hash of a file
      *
-     * @param file
+     * @param file to extract hash from
      * @return A string containing the hexadecimal representation of the bytes in a Blake2B Hash
      */
     public final String calculateBlake2bHash(File file) {

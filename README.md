@@ -29,7 +29,7 @@ PWSS representatives if you're interested.
 <dependency>
   <groupId>lib.pwss</groupId>
   <artifactId>algorithm-hash-extraction</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
 </dependency>
 ```
 <sub>(PWSS Private Github Package)</sub>
@@ -208,6 +208,17 @@ To change the selected algorithm to "NewAlgorithm", update the value of "USE_FOR
 3=Blake_2B
 USE_FOR_PROD=2
 ```
+
+### API Documentation
+
+For detailed information about our classes, methods, and their usage, please visit the Javadoc:
+
+[Link to API Docs](https://pwssorg.github.io/literate-octo-guacamole-JavaDocs/)
+
+The Javadocs provide comprehensive documentation for all public APIs in this project, including:
+- Class descriptions
+- Method details with parameters and return types
+- Example usages when available
 
 ## Discussion Forum
 
