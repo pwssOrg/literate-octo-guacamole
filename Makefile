@@ -11,6 +11,11 @@ all:
 build:
 	cd $(POM_DIR) && mvn clean install
 
+# Test target
+.PHONY: test
+test:
+	cd $(POM_DIR) && mvn clean test
+
 # Clean target
 .PHONY: clean
 clean:
@@ -20,6 +25,7 @@ clean:
 .PHONY: help
 help:
 	@echo "Available targets:"
-	@echo "  make build    - Build the project using Maven"
+	@echo "  make build   - Build the project using Maven"
+	@echo "  make test	  - Test the project using Maven"
 	@echo "  make clean   - Clean the project using Maven"
 	@echo "  make help    - Display this help message"
