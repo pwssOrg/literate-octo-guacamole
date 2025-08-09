@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 
+import org.slf4j.LoggerFactory;
+
 import lib.pwss.hash.FileHash;
 
 /**
@@ -47,7 +49,7 @@ public final class BigFileHashHandler extends FileHashBase implements FileHash {
     public BigFileHashHandler(final long userDefinedMaxLimit) {
         dataHash = new DataHash();
         this.USER_DEFINED_MAX_LIMIT = userDefinedMaxLimit;
-        this.log = null;
+        this.log = LoggerFactory.getLogger(BigFileHashHandler.class);
     }
 
     /**
