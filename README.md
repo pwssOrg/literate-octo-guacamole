@@ -29,7 +29,7 @@ PWSS representatives if you're interested.
 <dependency>
   <groupId>lib.pwss</groupId>
   <artifactId>algorithm-hash-extraction</artifactId>
-  <version>1.2</version>
+  <version>1.2.1</version>
 </dependency>
 ```
 <sub>(PWSS Private Github Package)</sub>
