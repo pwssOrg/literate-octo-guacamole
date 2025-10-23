@@ -27,7 +27,7 @@ public final class BigFileHashHandler extends FileHashBase implements FileHash {
      * User-defined maximum limit for file size.
      * A value of -1L indicates that there is no maximum limit.
      */
-    private final long USER_DEFINED_MAX_LIMIT;
+    private long USER_DEFINED_MAX_LIMIT;
 
     /**
      * Message to be returned when a file exceeds the user-defined maximum limit.
@@ -46,7 +46,7 @@ public final class BigFileHashHandler extends FileHashBase implements FileHash {
      *                            value of -1L indicates no
      *                            limit.
      */
-    public BigFileHashHandler(final long userDefinedMaxLimit) {
+    public BigFileHashHandler(long userDefinedMaxLimit) {
         dataHash = new DataHash();
         this.USER_DEFINED_MAX_LIMIT = userDefinedMaxLimit;
         this.log = LoggerFactory.getLogger(BigFileHashHandler.class);
@@ -112,6 +112,33 @@ public final class BigFileHashHandler extends FileHashBase implements FileHash {
         }
 
         return BLAKE_2B_PRINT_PREFIX + bytesToHex(dataHash.getBLAKE2bBig(file.getAbsolutePath(), DIGEST_SIZE_BLAKE_2B));
+    }
+
+    /**
+     * Gets the user-defined maximum file size limit.
+     *
+     * This method returns the maximum file size that has been set by the user.
+     * The class uses this value to determine whether it will attempt to extract a
+     * hash from files of this size or
+     * not.
+     *
+     * @return the user-defined maximum file size limit in bytes
+     */
+    public final long getUserDefinedMaxLimit() {
+        return USER_DEFINED_MAX_LIMIT;
+    }
+
+    /**
+     * Sets the user-defined maximum file size limit.
+     *
+     * This method sets the maximum file size that the class will use to determine
+     * whether it should attempt to
+     * extract a hash from files of this size or not.
+     *
+     * @param userDefinedMaxLimit the new maximum file size limit in bytes
+     */
+    public final void setUserDefinedMaxLimit(long userDefinedMaxLimit) {
+        USER_DEFINED_MAX_LIMIT = userDefinedMaxLimit;
     }
 
 }
