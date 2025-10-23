@@ -6,7 +6,7 @@
 
     <groupId>lib.pwss</groupId>
     <artifactId>algorithm-hash-extraction</artifactId>
-    <version>1.2.2</version>
+    <version>1.2.3</version>
     <description>The 'algorithm-hash-extraction' library provides two core functionalities:
 1. Hash Extraction: It extracts hashes from files using three different cryptographic algorithms - SHA-256, SHA3,
 and Blake_2b.
