@@ -6,7 +6,7 @@
 
     <groupId>lib.pwss</groupId>
     <artifactId>algorithm-hash-extraction</artifactId>
-    <version>1.2.4</version>
+    <version>1.2.5</version>
     <description>The 'algorithm-hash-extraction' library provides two core functionalities:
 1. Hash Extraction: It extracts hashes from files using three different cryptographic algorithms - SHA-256, SHA3,
 and Blake_2b.
@@ -63,7 +63,7 @@ cryptographic algorithms based on configurable policies.</description>
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-jdk18on</artifactId>
-            <version>1.82</version>
+            <version>1.83</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
         <dependency>
