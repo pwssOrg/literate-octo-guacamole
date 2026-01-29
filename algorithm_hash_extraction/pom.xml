@@ -6,7 +6,7 @@
 
     <groupId>lib.pwss</groupId>
     <artifactId>algorithm-hash-extraction</artifactId>
-    <version>1.2.6</version>
+    <version>1.2.7</version>
     <description>The 'algorithm-hash-extraction' library provides two core functionalities:
 1. Hash Extraction: It extracts hashes from files using three different cryptographic algorithms - SHA-256, SHA3,
 and Blake_2b.
@@ -59,23 +59,23 @@ cryptographic algorithms based on configurable policies.</description>
     </licenses>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk18on -->
+        <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk18on/1.83 -->
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-jdk18on</artifactId>
             <version>1.83</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+        <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic/1.5.26 -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.5.23</version>
+            <version>1.5.26</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api/6.0.2  -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>6.0.1</version>
+            <version>6.0.2</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
