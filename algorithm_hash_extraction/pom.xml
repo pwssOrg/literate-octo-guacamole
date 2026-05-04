@@ -6,7 +6,7 @@
 
     <groupId>lib.pwss</groupId>
     <artifactId>algorithm-hash-extraction</artifactId>
-    <version>1.2.7</version>
+    <version>1.2.8</version>
     <description>The 'algorithm-hash-extraction' library provides two core functionalities:
 1. Hash Extraction: It extracts hashes from files using three different cryptographic algorithms - SHA-256, SHA3,
 and Blake_2b.
@@ -22,13 +22,29 @@ cryptographic algorithms based on configurable policies.</description>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub pwssOrg Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/pwssOrg/literate-octo-guacamole</url>
-        </repository>
-    </distributionManagement>
+
+
+         <profiles>
+    <profile>
+        <id>github</id>
+        <distributionManagement>
+            <repository>
+                <id>github</id>
+                <url>https://maven.pkg.github.com/pwssOrg/literate-octo-guacamole</url>
+            </repository>
+        </distributionManagement>
+    </profile>
+
+    <profile>
+        <id>central</id>
+        <distributionManagement>
+            <repository>
+                <id>central</id>
+                <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2</url>
+            </repository>
+        </distributionManagement>
+    </profile>
+</profiles>
 
 
     <developers>
@@ -45,37 +61,35 @@ cryptographic algorithms based on configurable policies.</description>
 
     <licenses>
         <license>
-            <name>Proprietary License</name>
+            <name>Apache 2.0 License</name>
             <url>https://github.com/pwssOrg/literate-octo-guacamole/blob/main/LICENSE.md</url>
             <distribution>repo</distribution>
             <comments>
-                This software and its source code are proprietary to Peter Westin (pwgit-create) and Stefan Smudja
-                (lilstiffy). All rights
-                reserved. This project may not be copied or used for commercial purposes without the explicit permission
-                of the
-                copyright holders.
+                Apache License
+                Version 2.0, January 2004
+                http://www.apache.org/licenses/
             </comments>
         </license>
     </licenses>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk18on/1.83 -->
+        <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk18on/1.84 -->
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-jdk18on</artifactId>
-            <version>1.83</version>
+            <version>1.84</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic/1.5.26 -->
+        <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic/1.5.32 -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.5.26</version>
+            <version>1.5.32</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api/6.0.2  -->
+        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api/6.0.3  -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>6.0.2</version>
+            <version>6.0.3</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
