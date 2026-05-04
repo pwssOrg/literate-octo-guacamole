@@ -57,23 +57,23 @@ cryptographic algorithms based on configurable policies.</description>
     </licenses>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk18on/1.83 -->
+        <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk18on/1.84 -->
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-jdk18on</artifactId>
-            <version>1.83</version>
+            <version>1.84</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic/1.5.26 -->
+        <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic/1.5.32 -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.5.26</version>
+            <version>1.5.32</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api/6.0.2  -->
+        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api/6.0.3  -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>6.0.2</version>
+            <version>6.0.3</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
