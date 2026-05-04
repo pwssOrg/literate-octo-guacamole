@@ -21,7 +21,7 @@ future-proofing cryptographic applications against quantum computing threats.
 ## Installation
 
 To use the `algorithm-hash-extraction` library, you need to include it as a dependency in your project. You can find
-it on the private GitHub package repository of PWSS. A GitHub packages token is required to access it. Contact
+it on the GitHub package repository of PWSS. A GitHub packages token is required to access it. Contact
 PWSS representatives if you're interested.
 
 ### Maven 
@@ -32,7 +32,6 @@ PWSS representatives if you're interested.
   <version>1.2.7</version>
 </dependency>
 ```
-<sub>(PWSS Private Github Package)</sub>
 ## Usage
 
 Here's a basic example to get you started with using the `algorithm-hash-extraction` library for calculating
