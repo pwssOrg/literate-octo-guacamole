@@ -18,13 +18,8 @@ future-proofing cryptographic applications against quantum computing threats.
 - Compares hash values for equality with XOR and Java equals operations
 - Provides data structures for supporting algorithm switching in cryptographic applications
 
-## Installation
-
-To use the `algorithm-hash-extraction` library, you need to include it as a dependency in your project. You can find
-it on the GitHub package repository of PWSS. A GitHub packages token is required to access it. Contact
-PWSS representatives if you're interested.
-
-### Maven 
+### Installation
+To include this library in your project, add the following dependency to your `pom.xml`:
 ```xml
 <dependency>
   <groupId>io.github.pwssorg</groupId>
