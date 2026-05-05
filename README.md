@@ -27,7 +27,7 @@ PWSS representatives if you're interested.
 ### Maven 
 ```xml
 <dependency>
-  <groupId>lib.pwss</groupId>
+  <groupId>io.github.pwssorg</groupId>
   <artifactId>algorithm-hash-extraction</artifactId>
   <version>1.2.8</version>
 </dependency>
