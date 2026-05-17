@@ -27,6 +27,7 @@ To include this library in your project, add the following dependency to your `p
   <version>1.2.8</version>
 </dependency>
 ```
+[![MvnRepository](https://badges.mvnrepository.com/badge/io.github.pwssorg/algorithm-hash-extraction/badge.svg?label=MvnRepository)](https://mvnrepository.com/artifact/io.github.pwssorg/algorithm-hash-extraction)
 ## Usage
 
 Here's a basic example to get you started with using the `algorithm-hash-extraction` library for calculating
