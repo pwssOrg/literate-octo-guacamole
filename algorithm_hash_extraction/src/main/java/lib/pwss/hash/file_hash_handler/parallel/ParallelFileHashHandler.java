@@ -83,34 +83,34 @@ public final class ParallelFileHashHandler implements ParallelFileHash {
 
     @Override
     public Future<String> calculateSha256HashFuture(File file) {
-        log.debug("Starting a new thread for extrating a SHA256 Hash");
+        log.debug("Creating a new thread to extract a SHA-256 hash");
         return executorService
                 .submit(new HashForFilesWorker(file, hashInstance, ParallelWorkerMethod.SHA256));
     }
 
     @Override
     public Future<String> calculateSha3HashFuture(File file) {
-        log.debug("Starting a new thread for extrating a SHA3 Hash");
+        log.debug("Creating a new thread to extract a SHA-3 hash");
         return executorService
                 .submit(new HashForFilesWorker(file, hashInstance, ParallelWorkerMethod.SHA3));
     }
 
     @Override
     public Future<String> calculateBlake2bHashFuture(File file) {
-        log.debug("Starting a new thread for extrating a Blake2B Hash");
+        log.debug("Creating a new thread to extract a BLAKE2b hash");
         return executorService
                 .submit(new HashForFilesWorker(file, hashInstance, ParallelWorkerMethod.BLAKE2_B));
     }
 
     @Override
     public final void shutdownThreadPool() {
-        log.debug("shutting down executorService...");
+        log.debug("Shutting down ExecutorService...");
         executorService.shutdownNow();
 
         while (!executorService.isShutdown()) {
         }
         executorService.close();
-        log.debug("executorService Closed!");
+        log.debug("ExecutorService shutdown complete");
     }
 
 }
