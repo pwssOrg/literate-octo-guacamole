@@ -14,7 +14,7 @@ import lib.pwss.hash.model.HashForFilesOutput;
  * supports shutting down
  * the thread pool after all tasks are completed.
  */
-public interface ParalellFileHash {
+public interface ParallelFileHash {
 
     /**
      * Calculates the SHA256 hash for a given file and returns a
@@ -53,7 +53,7 @@ public interface ParalellFileHash {
      * @param file The file to be hashed.
      * @return An instance of HashForFilesOutput containing the calculated hashes.
      */
-    HashForFilesOutput GetAllHasheInParallalel(File file);
+    HashForFilesOutput GetAllHashesInParallel(File file);
 
     /**
      * Shuts down the thread pool and ensures all tasks are completed.

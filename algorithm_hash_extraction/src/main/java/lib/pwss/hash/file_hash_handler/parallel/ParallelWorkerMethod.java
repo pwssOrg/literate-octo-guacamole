@@ -1,11 +1,11 @@
-package lib.pwss.hash.file_hash_handler;
+package lib.pwss.hash.file_hash_handler.parallel;
 
 /**
  * Enum representing different parallel hash calculation methods.
  * Each value in this enumeration corresponds to a specific hashing algorithm
  * that can be used for calculating file hashes in parallel.
  */
-enum ParalellWorkerMethod {
+enum ParallelWorkerMethod {
     /**
      * The SHA-256 hashing algorithm. This is a cryptographic hash function
      * that takes a string of any length as input and produces a fixed 256-bit

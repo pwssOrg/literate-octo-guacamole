@@ -1,8 +1,10 @@
-package lib.pwss.hash.file_hash_handler;
+package lib.pwss.hash.file_hash_handler.parallel;
 
 import java.io.File;
 import java.util.ConcurrentModificationException;
 import java.util.concurrent.Callable;
+
+import lib.pwss.hash.file_hash_handler.BigFileHashHandler;
 
 /**
  * This final class represents a worker for computing hashes of files using
@@ -20,7 +22,7 @@ final class HashForFilesWorker implements Callable<String> {
     /**
      * Enum representing the hashing algorithm to be used by this worker.
      */
-    private final ParalellWorkerMethod algorithm;
+    private final ParallelWorkerMethod algorithm;
     /**
      * The file that will be hashed by this worker instance.
      */
@@ -37,7 +39,7 @@ final class HashForFilesWorker implements Callable<String> {
      *                           BLAKE2_B).
      */
     HashForFilesWorker(final File file, final BigFileHashHandler bigFileHashHandler,
-            ParalellWorkerMethod algorithm) {
+            ParallelWorkerMethod algorithm) {
 
         this.targetFile = file;
         this.hashInstance = bigFileHashHandler;
@@ -63,7 +65,7 @@ final class HashForFilesWorker implements Callable<String> {
                 return ExtractBlake2bHash(targetFile);
             default:
                 throw new ConcurrentModificationException(
-                        "An error occoured while executing an paralell hash extraction operation");
+                        "An error occurred while executing a parallel hash extraction operation");
         }
 
     }
