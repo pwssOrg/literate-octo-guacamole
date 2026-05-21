@@ -62,14 +62,11 @@ public final class ParallelFileHashHandler implements ParallelFileHash {
 
         log.debug("Computing file hashes in parallel using 3 different hashing algorithms");
 
-        while (!sha256Hash.isDone() && !sha3Hash.isDone() && !blake2bHash.isDone()) {
-            // Busy-wait until all tasks are done
-        }
-
-        log.debug("Hash computation completed!");
-
         try {
-            return new HashForFilesOutput(file, sha256Hash.get(), sha3Hash.get(), blake2bHash.get());
+            final HashForFilesOutput computedHashes = new HashForFilesOutput(file, sha256Hash.get(), sha3Hash.get(),
+                    blake2bHash.get());
+            log.debug("Hash computation completed!");
+            return computedHashes;
         } catch (InterruptedException e) {
             log.error("Interrupted while waiting for hash calculation to complete.", e);
             Thread.currentThread().interrupt(); // Restore interrupted status
