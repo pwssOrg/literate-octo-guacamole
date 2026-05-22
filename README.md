@@ -24,7 +24,7 @@ To include this library in your project, add the following dependency to your `p
 <dependency>
   <groupId>io.github.pwssorg</groupId>
   <artifactId>algorithm-hash-extraction</artifactId>
-  <version>1.2.8</version>
+  <version>1.2.9</version>
 </dependency>
 ```
 [![MvnRepository](https://badges.mvnrepository.com/badge/io.github.pwssorg/algorithm-hash-extraction/badge.svg?label=MvnRepository)](https://mvnrepository.com/artifact/io.github.pwssorg/algorithm-hash-extraction)

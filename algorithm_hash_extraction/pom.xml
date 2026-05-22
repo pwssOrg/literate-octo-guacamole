@@ -8,7 +8,7 @@
     <!-- Maven Central coordinates -->
     <groupId>io.github.pwssorg</groupId>
     <artifactId>algorithm-hash-extraction</artifactId>
-    <version>1.2.8</version>
+    <version>1.2.9</version>
 
     <name>algorithm-hash-extraction</name>
     <description>The 'algorithm-hash-extraction' library provides hash extraction (SHA-256, SHA3, Blake2b) and runtime algorithm switching via config.</description>
