@@ -8,7 +8,7 @@
     <!-- Maven Central coordinates -->
     <groupId>io.github.pwssorg</groupId>
     <artifactId>algorithm-hash-extraction</artifactId>
-    <version>1.2.9</version>
+    <version>1.2.10</version>
 
     <name>algorithm-hash-extraction</name>
     <description>The 'algorithm-hash-extraction' library provides hash extraction (SHA-256, SHA3, Blake2b) and runtime algorithm switching via config.</description>
@@ -54,19 +54,19 @@
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-jdk18on</artifactId>
-            <version>1.84</version>
+            <version>1.86</version>
         </dependency>
 
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.5.32</version>
+            <version>1.6.5</version>
         </dependency>
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>6.0.3</version>
+            <version>6.1.3</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
