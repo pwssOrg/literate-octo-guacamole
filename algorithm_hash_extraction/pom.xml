@@ -8,7 +8,7 @@
     <!-- Maven Central coordinates -->
     <groupId>io.github.pwssorg</groupId>
     <artifactId>algorithm-hash-extraction</artifactId>
-    <version>1.3</version>
+    <version>1.3.1</version>
 
     <name>algorithm-hash-extraction</name>
     <description>The 'algorithm-hash-extraction' library provides hash extraction (SHA-256, SHA3, Blake2b) and runtime algorithm switching via config.</description>
@@ -16,11 +16,11 @@
 
     <!-- Licensing (required for Maven Central) -->
     <licenses>
-        <license>
-            <name>Apache License, Version 2.0</name>
-            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-        </license>
+    <license>
+        <name>MIT License</name>
+        <url>https://opensource.org/license/mit</url>
+        <distribution>repo</distribution>
+    </license>
     </licenses>
 
     <!-- Developers -->
