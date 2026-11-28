@@ -1,0 +1,5 @@
+# File Hash Handler
+/algorithm_hash_extraction/src/main/java/lib/pwss/hash/ @pwgit-create
+
+# Default owners for everything else
+* @pwgit-create @lilstiffy
